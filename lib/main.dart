@@ -1,13 +1,15 @@
 // @dart=2.9
 
+import 'package:t1t1/view/home_view/widgets/temp_screen.dart';
 import 'package:t1t1/view_model/home_view_model.dart';
 import 'package:t1t1/view/home_view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
+import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   final app = MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => HomeViewModel()),
@@ -35,17 +37,23 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      locale: Locale('en'),
-      localizationsDelegates: const [
+
+      localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        SfGlobalLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      supportedLocales: [
+        const Locale('ar'),
+      ],
+      locale: const Locale('ar'),
+
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      supportedLocales: [const Locale('en')],
       home: const HomeView(),
+
     );
   }
 }

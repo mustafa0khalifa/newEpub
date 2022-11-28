@@ -40,7 +40,14 @@ dependencies:
   epub_view:
   provider:
   intl:
-  vocsy_epub_viewer:
+  #vocsy_epub_viewer:
+  epubx:
+  flutter_html:
+  flutter_html_to_pdf:
+  #flutter_full_pdf_viewer:
+  syncfusion_flutter_pdfviewer:
+  path_provider:
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -51,6 +58,7 @@ dev_dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  syncfusion_localizations:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
